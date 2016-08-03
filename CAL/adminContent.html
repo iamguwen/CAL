@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算机应用技术协会管理</title>
+<style type="text/css">
+body,h1,div,p,img,ul,li,h3{margin:0;padding:0;}
+body{background:#E6E6E6;}
+#admin_content_box{width:expression(document.body.clientWidth <= 1200? "1200px": "auto");width:1200px;min-width:1200px;margin:auto;}
+h1{position:relative;top:60px;left:90px;}
+
+#admin_content{width:1000px;height:800px;margin:0 auto;}
+#admin_top{background:url(images/top.jpg);width:1000px;height:150px;no-repeat;}
+
+
+table{width:800px;border:1px solid #00CC99;text-align:center;}
+table tr{border:1px solid #00CC99;}
+table td{border:1px solid #00CC99;}
+#form_box{width:800px;height:400px;display:none;}
+</style>
+<script type="text/javascript">
+window.onload=function()
+{
+	var oInsert=document.getElementById('insert');
+	oInsert.onclick=function()
+	{
+		document.getElementById('form_box').style.display="block";
+	}
+	
+	
+	var oSave=document.getElementById('save');
+	oSave.onclick=function()
+	{
+		document.getElementById('form_box').style.display="none";
+		var Title=document.getElementById('title').value;
+		var Time=document.getElementById('time').value;
+		var kind=document.getElementById('myselect').value;
+	
+		
+		var Tab=document.getElementById('tab');
+		var s=Tab.rows.length;
+		Tab.rows[s-1].cells[0].innerHTML=s-1;
+		Tab.rows[s-1].cells[1].innerHTML=Title;
+		Tab.rows[s-1].cells[2].innerHTML=Time;
+		Tab.rows[s-1].cells[3].innerHTML=kind;
+		
+	}
+	
+	var oXiugai=document.getElementById('xiugai');
+	oXiugai.onclick=function()
+	{
+		var xiu_tit=prompt("请输入要修改的文本的标题","");
+		//如果找到该文件，则document.getElementById('form_box').style.display="";
+		//document.getElementById('title').value='';
+		//document.getElementById('time').value='';
+		//document.getElementById('myselect').value='';
+		
+		
+	}
+	var oDelete=document.getElementById('delete');
+	oDelete.onclick=function()
+	{
+		var del_tit=prompt("请输入要删除的文本的标题","");
+		alert("删除成功!");
+	}
+
+
+	
+	
+	
+	
+	
+}
+</script>
+
+</head>
+
+<body>
+<div id="admin_content">
+<div id="admin_content">
+           <div id="admin_top"><h1>计算机应用技术协会管理系统</h1></div>       
+               
+           <div style="margin-top:20px;clear:left;display:block;" class="message">
+               <div style="margin-bottom:20px;"> 
+                     <input type="button" value="新增" id="insert">
+                     <input type="button" value="修改" id="xiugai">
+                     <input type="button" value="删除" id="delete">
+                </div>
+                <table  cellpadding="0px" cellspacing="0px" id="tab">
+                   <tr>
+                   	<td>编号</td>
+                   	<td>标题</td>
+                   	<td>时间</td>
+                   	<td>类别</td>
+                   </tr>
+                   <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   
+                </table>
+                <div id="form_box" >
+                <form action="" id="formid" name="myForm">
+                   <label>标题:</label><input type="text" id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <label >时间:</label><input type="text" id="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <label>类别:</label><select name="kind" id="myselect">
+                                 <option value="通知公告">通知公告</option>
+                                 <option value="近期活动">近期活动</option>
+                                 <option value="学习总结">学习总结</option>
+                               </select><br/>
+                               <label >内容：</label><br>
+                  <textarea name="kind" id="" cols="70" rows="12" style="resize:none"></textarea>                <br/><input type="button" value="保存" id="save"> 
+                   <input type="reset" value="重置">             
+                </form>
+                </div>
+           </div>
+                       
+ </div>
+</div>
+</body>
+</html>

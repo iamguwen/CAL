@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>消息动态 | 计算机应用技术协会</title>
+<link rel="stylesheet" href="css/css.css">
+<script type="text/javascript">
+window.onload=function()
+{
+	//导航菜单鼠标的移入移出背景色的变化
+			 var aA1=document.getElementById('nav').getElementsByTagName('a');
+			 var i=0;
+			
+			for(i=0;i<aA1.length-1;i++)
+			{
+				aA1[i].onmouseover=function ()
+				{
+					this.parentNode.style.background='#52A5E8';
+				}
+				aA1[i].onmouseout=function ()
+				{
+					this.parentNode.style.background='';
+				}
+			}
+			
+			
+	
+}
+</script>
+</head>
+
+<body>
+       <div id="top">
+            <div id="logo">
+                <img src="images/logo.png" alt="计算机应用技术协会">
+            </div>
+            <ul id="nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="introduce.html">协会简介</a></li>
+                    <li><a href="member.html">协会成员</a></li>
+                    <li><a href="works.html">协会作品</a></li>
+                    <li id="collect"><a href="#"  style="font-size:15px;text-align:right;">收藏</a></li>
+            </ul>
+      </div>
+      <div id="information_box">
+      <div id="information">
+           <div class="one" >
+                   <p class="big"><strong>消息动态</strong></p>
+                   <p class="small"><a href="index.html">首页</a>>消息动态</p>
+            </div>
+            <div><hr style="width:100%;"></div>
+            <div class="content">
+                     <div class="left" id="aside">
+                           <p  ><a href="information.html" id="three" >通知</a></p>
+                           <p  ><a href="information1.html" id="four">近期活动</a></p>
+                           <p style="background:#3A779F;"><a href="information2.html" id="five">学习总结</a></p>
+                           <p ><a href="admin.html" target="_blank"  id="six" style="width:150px;height:40px;display:block;">发表</a></p>
+                     </div>
+                     <div class="right" id="inform">
+                            <div >
+                           <h3 align="center" id="title_3">dgdgee</h3>
+                           <p style="text-indent:2em;padding:20px;height: 30px;word-wrap:break-word;" id="content_1"></p>
+                            </div>
+                            
+                           
+                    </div>
+            </div>
+      </div>
+      </div>
+      
+      
+      
+       <div id="bottom">
+       <hr>
+         <div id="foot">
+            <p>关于协会 | 服务条款 | 协会成品 | 协会纳新 | 协会成员 | 客服中心</p><br>
+            <address>Copyright © CAL. All Rights Reserved.</address>
+    
+        </div>
+    </div>
+</body>
+</html>

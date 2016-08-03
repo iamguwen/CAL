@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="cn.cl.ssm.mapper.UserMapper">
+<!--添加用户信息-->
+<insert id="insertUser" parameterType="cn.cl.ssm.po.User" >
+    
+     <!-- 使用mysql的uuid来生成主键
+	       执行过程：首先通过uuid得到主键，将主键设置到user对象的num属性中
+	         然后再insert中执行。从user中取出num的值
+	  -->
+  insert into User(name,num,sex,major,phone,email,direction,reason) value(#{name},#{num},#{sex},#{major},#{phone},#{email},#{direction},#{reason})
+</insert>
+
+<!-- 查询管理员信息 -->
+  <select id="findManager"  resultType="cn.cl.ssm.po.Manager">
+      select * from manager 
+  </select>
+  
+  
+  <!-- 插入通知公告 -->
+  <insert id="insertMessage" parameterType="cn.cl.ssm.po.Message">
+       insert into message(title,time,content,type) value(#{title},#{time},#{content},#{type})
+  </insert>
+  
+  <!-- 查询通知公告 -->
+  <select id="selectMessage" resultType="cn.cl.ssm.po.Message">
+     select * from message
+  </select>
+  
+  <!-- 根据标题修改通知 -->
+    <update id="updateMessage" parameterType="cn.cl.ssm.po.Message">
+    update message set time=#{time},content=#{content} where title=#{title}
+	</update>
+    
+    <!-- 根据标题删除通知 -->
+    <delete id="deleteMessage" parameterType="java.lang.String">
+	    	delete from message where title=#{title}
+    </delete>
+    
+    <!-- 根据类型查询通知 -->
+    <select id="selectMessageByNotice" parameterType="java.lang.String" resultType="cn.cl.ssm.po.Message">
+        select * from message where type=#{type}
+    </select>
+    
+    <!-- 根据标题查询 -->
+     <select id="selectMessageByTitle" parameterType="java.lang.String" resultType="cn.cl.ssm.po.Message">
+        select * from message where title=#{title}
+    </select>
+    
+</mapper>

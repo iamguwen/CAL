@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- 全局setting的配置，根据需要在加 -->
+<!-- 配置别名 -->
+<typeAliases>
+  
+   <typeAlias type="cn.cl.ssm.po.User" alias="user"></typeAlias>
+   <typeAlias type="cn.cl.ssm.po.Notice" alias="notice"></typeAlias>
+   <typeAlias type="cn.cl.ssm.po.Manager" alias="manager"></typeAlias>
+</typeAliases>
+
+</configuration>
